@@ -3,6 +3,16 @@
 unset($CFG);
 global $CFG;
 $CFG = new stdClass();
+if(getenv('DATABASE_URL'))
+{
+    $dburl = parse_url(getenv("DATABASE_URL"));
+    // remove the slash from url path
+    $database_name =  str_replace('/', '', $dburl['path']);
+    putenv('DATABASE_HOST='.$dburl['host']);
+    putenv('DATABASE_NAME='.$database_name);
+    putenv('DATABASE_USER='.$dburl['user']);
+    putenv('DATABASE_PASSWORD='.$dburl['pass']);
+}
 
 $CFG->dbtype    = getenv('DATABASE_TYPE');
 $CFG->dblibrary = 'native';
