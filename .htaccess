@@ -1,5 +1,0 @@
-DirectoryIndex index.php index.html index.htm
-<IfDefine APACHE2>
-    AcceptPathInfo on
-</IfDefine>
-LimitRequestBody 0
