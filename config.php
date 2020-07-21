@@ -28,7 +28,7 @@ $CFG->dboptions = array (
 );
 
 $CFG->wwwroot   = getenv('WWWROOT');
-$CFG->dataroot  = getenv('DATAROOT');
+$CFG->dataroot  = '/home/moodledata';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
